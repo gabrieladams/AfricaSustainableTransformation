@@ -1,19 +1,20 @@
 <?php
 
-    $to = "rockybd1995@gmail.com";
-    $from = $_REQUEST['email'];
-    $name = $_REQUEST['name'];
-    $subject = $_REQUEST['subject'];
-    $number = $_REQUEST['number'];
-    $cmessage = $_REQUEST['message'];
+    // $to = "gabrieladams1738@gmail.com";
+    $from = 'ast@gmail.com';
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+    $subject = $_POST['subject'];
+    // $number = $_POST['number'];
+    $cmessage = $_POST['message'];
 
     $headers = "From: $from";
 	$headers = "From: " . $from . "\r\n";
-	$headers .= "Reply-To: ". $from . "\r\n";
+	$headers .= "Reply-To: ". $email . "\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-    $subject = "You have a message from your Bitmap Photography.";
+    $subject = "You have a message from AST.";
 
     $logo = 'img/logo.png';
     $link = '#';
@@ -32,6 +33,8 @@
 	$body .= "</tbody></table>";
 	$body .= "</body></html>";
 
-    $send = mail($to, $subject, $body, $headers);
+	$send = mail($email, $subject, $body, $headers);
+	
+	echo 'Email has been sent to you'
 
 ?>
